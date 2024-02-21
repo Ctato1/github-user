@@ -16,7 +16,7 @@ export default function SearchUser({findUser}:SearchUserProps) {
   return (
     <form
       onSubmit={prevent}
-      className="overflow-hidden flex gap-1 items-center bg-whitetext rounded-xl cursor-pointer p-2 border-custom-gray border-solid border-1 shadow-2xl dark:bg-lightDark"
+      className="overflow-hidden flex gap-1 items-center bg-whitetext rounded-xl cursor-pointer p-2 border-custom-gray border-solid border-1 shadow-input dark:bg-lightDark"
     >
       <Search color="#0079FF" />
       <input
