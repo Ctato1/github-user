@@ -9,6 +9,8 @@ export default {
       'darktheme': '#141D2F',
       'darkcontainer': '#1E2A47',
       'whitetext': '#FFF',
+      'lightDark': '#1E2A47',
+      'buttonBg' : '#0079FF',
     },
     fontFamily: {
       'mono': ['Space Mono', 'monospace']
@@ -16,7 +18,14 @@ export default {
     fontSize: {
       '26': '26px',
     },
-    extend: {},
+    extend: {
+      borderColor: {
+        'custom-gray': '#c1c1c1', // Define your custom gray color
+      },
+      borderWidth: {
+        '1': '1px', // Define 1px border width
+      },
+    },
   },
   plugins: [],
   darkMode:'class'

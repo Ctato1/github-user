@@ -1,13 +1,12 @@
 import { Moon, Sun } from "lucide-react";
 
-interface HeaderProps{
-    dark:boolean;
-    setDark:()=>void;
+interface HeaderProps {
+  dark: boolean;
+  setDark: () => void;
 }
-export default function Header({dark,setDark}:HeaderProps) {
+export default function Header({ dark, setDark }: HeaderProps) {
   return (
-    <>
-      <header className=" mx-auto space-y-10  rounded-md p-4 dark:bg-slate-600 lg:max-w-screen-md md:max-w-screen-sm">
+      <header>
         <div className="flex justify-between items-center dark:text-whitetext">
           <h3 className="text-26 font-bold">devfinder</h3>
           <h4
@@ -19,6 +18,5 @@ export default function Header({dark,setDark}:HeaderProps) {
           </h4>
         </div>
       </header>
-    </>
   );
 }
