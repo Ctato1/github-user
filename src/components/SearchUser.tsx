@@ -1,17 +1,18 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 
-interface SearchUserProps{
-    findUser:(value:string)=>void;
+interface SearchUserProps {
+  findUser: (value: string) => void;
+  result: boolean;
 }
 
-export default function SearchUser({findUser}:SearchUserProps) {
-    const [value, setValue] = useState<string>("");
+export default function SearchUser({ findUser, result }: SearchUserProps) {
+  const [value, setValue] = useState<string>("");
   async function prevent(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!value.trim()) return;
     findUser(value);
-    setValue('')
+    setValue("");
   }
   return (
     <form
@@ -24,11 +25,16 @@ export default function SearchUser({findUser}:SearchUserProps) {
         placeholder="Search GitHub username…"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="grow h-8 px-1 outline-none dark:bg-lightDark dark:text-whitetext"
+        className="grow h-8 px-1 outline-none dark:bg-lightDark dark:text-whitetext placeholder:text-[10px] sm:placeholder:text-base"
       />
+      {!result && (
+        <span className="text-red-600 pr-2 text-[9px] sm:text-base animate-pulse">
+          No Result
+        </span>
+      )}
       <button
         type="submit"
-        className="rounded-lg border-none lg:p-3 bg-buttonBg text-whitetext font-bold md:p-2 "
+        className="rounded-lg border-none p-1 bg-buttonBg text-whitetext font-bold md:p-2 text-[8px] sm:text-base"
       >
         Search
       </button>

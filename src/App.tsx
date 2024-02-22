@@ -7,6 +7,7 @@ import ResponseData from "./types/api";
 function App() {
   const [dark, setDark] = useState<boolean>(true);
   const [user, setUser] = useState<ResponseData | null>(null);
+  const [result, setResult] = useState<boolean>(true);
   function darkMode() {
     setDark((prev) => !prev);
   }
@@ -21,10 +22,9 @@ function App() {
       
       
       setUser({avatar_url,bio, blog,created_at,followers,following,name,login,public_repos,twitter_username,url,location,company});
+      setResult(true)
     } catch (error) {
-      if (error instanceof Error) {
-        alert(error.message);
-      }
+        setResult(false)
     }
   }
   useEffect(() => {
@@ -48,7 +48,7 @@ function App() {
       <section className="font-mono duration-700 py-5 sm:py-14 dark:bg-darktheme h-full 2xl:h-screen">
         <main className="mx-auto space-y-8  rounded-md px-2 lg:max-w-screen-md md:max-w-screen-sm">
           <Header dark={dark} setDark={darkMode} />
-          <SearchUser findUser={findUser} />
+          <SearchUser findUser={findUser} result={result}/>
           <UserContainer user={user}/>
         </main>
       </section>
