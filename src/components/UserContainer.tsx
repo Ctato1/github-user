@@ -86,27 +86,37 @@ export default function UserContainer({ user }: UserContainerProps) {
         </main>
         <footer className="flex flex-col sm:flex-row gap-5 justify-between pt-4">
           <div className="flex flex-col gap-5 justify-between px-2 text-[14px]">
-            <div className="flex  gap-2 dark:text-white">
+            <div className="flex  gap-2 text-black dark:text-white">
               <MapPin />
               <span
                 className={
-                  user?.location === null ? "text-gray-500" : "text-whitetext"
+                  user?.location === null ? "text-gray-500" : "dark:text-whitetext"
                 }
               >
                 {user?.location} {user?.location === null && "Not Available"}
               </span>
             </div>
-            <div className="flex gap-2 dark:text-white cursor-pointer">
+            <div className="flex gap-2 dark:text-white">
               <Link />
-              <a
-                href={user?.blog}
-                target="_blank"
-                className={`${
-                  user?.blog === "" ? "text-gray-500" : "text-whitetext"
-                } hover:underline`}
-              >
-                {user?.blog} {user?.blog === "" && "Not Available"}
-              </a>
+              {user?.blog ? (
+                <a
+                  href={user?.blog ? user?.blog : ""}
+                  target="_blank"
+                  className={`cursor-pointer ${
+                    user?.blog === "" ? "text-gray-500" : "dark:text-whitetext"
+                  } hover:underline`}
+                >
+                  {user?.blog} {user?.blog === "" && "Not Available"}
+                </a>
+              ) : (
+                <span
+                  className={`${
+                    user?.blog === "" ? "text-gray-500" : "text-whitetext"
+                  }`}
+                >
+                  {user?.blog} {user?.blog === "" && "Not Available"}
+                </span>
+              )}
             </div>
           </div>
 
