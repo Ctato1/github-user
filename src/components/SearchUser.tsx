@@ -34,7 +34,7 @@ export default function SearchUser({ findUser, result }: SearchUserProps) {
       )}
       <button
         type="submit"
-        className="rounded-lg border-none p-1 bg-buttonBg text-whitetext font-bold md:p-2 text-[8px] sm:text-base"
+        className="rounded-lg border-none p-1 bg-buttonBg text-whitetext font-bold md:p-2 text-[8px] sm:text-base duration-300 hover:bg-buttonHover"
       >
         Search
       </button>

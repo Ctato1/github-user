@@ -11,6 +11,7 @@ export default {
         buttonBg: "#0079FF",
         userColor: "#0079FF",
         darkHover:'#90A4D4',
+        buttonHover:'#60ABFF',
       },
       fontFamily: {
         mono: ["Space Mono", "monospace"],
