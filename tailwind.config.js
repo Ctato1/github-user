@@ -9,6 +9,7 @@ export default {
         whitetext: "#FFF",
         lightDark: "#1E2A47",
         buttonBg: "#0079FF",
+        userColor: "#0079FF",
       },
       fontFamily: {
         mono: ["Space Mono", "monospace"],
@@ -25,6 +26,7 @@ export default {
       },
       boxShadow: {
         'input': '0px 16px 30px -10px rgba(70, 96, 187, 0.20)',
+        'container': '0px 2px 25px 0px rgba(70, 96, 187, 0.20)'
       }
     },
   },
