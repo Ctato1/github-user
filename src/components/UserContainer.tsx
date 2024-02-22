@@ -5,6 +5,19 @@ interface UserContainerProps {
 }
 
 export default function UserContainer({ user }: UserContainerProps) {
+  function formatDate(isoDateString:string | undefined) {
+    if(isoDateString === undefined) return `Unknown`;
+    const months = [
+      "Jan", "Feb", "March", "Apr", "May", "June",
+      "July", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
+    const date = new Date(isoDateString);
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+  
+    return `joined ${day} ${month} ${year}`;
+  }
 
   return (
     <main className="p-[32px] sm:p-[48px] rounded-lg bg-white dark:bg-lightDark shadow-container overflow-hidden">
@@ -20,7 +33,9 @@ export default function UserContainer({ user }: UserContainerProps) {
             <span className="text-userColor">@{user?.login}</span>
           </div>
           <div>
-            <span className="text-[12px] sm:text-base">Joined 25 Jan 2011</span>
+            <span className="text-[12px] sm:text-base">
+            {formatDate(user?.created_at)}
+            </span>
           </div>
         </div>
       </section>
