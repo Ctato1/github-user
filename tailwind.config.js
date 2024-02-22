@@ -10,6 +10,7 @@ export default {
         lightDark: "#1E2A47",
         buttonBg: "#0079FF",
         userColor: "#0079FF",
+        darkHover:'#90A4D4',
       },
       fontFamily: {
         mono: ["Space Mono", "monospace"],
